@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
 })
 
 export class BookListComponent {
+  isShowImage: boolean = true;
 
+  toggleImage(): void {
+    this.isShowImage = !this.isShowImage;
+  }
 }
