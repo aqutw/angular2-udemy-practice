@@ -4,7 +4,7 @@
           <div class="col-md-4">
             <div class="thumbnail">
               <img *ngIf="isShowImage" src="app/assets/images/656.jpg">
-              <div class="caption">
+              <div class="caption" myHighlight>
                 <button class="btn btn-primary" (click)="toggleImage()">
                   {{ isShowImage ? 'Hide Image' : 'Show Image' }}
                 </button>
