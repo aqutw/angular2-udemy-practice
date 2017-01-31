@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { IBook } from '../book';
 
 @Component({
@@ -6,7 +6,7 @@ import { IBook } from '../book';
   templateUrl: 'book-list.component.html'
 })
 
-export class BookListComponent {
+export class BookListComponent implements OnInit, OnChanges {
   books: IBook[] = [{
     bookAuthor: "string",
     bookTitle: "string",
@@ -19,8 +19,22 @@ export class BookListComponent {
     bookImageUrl: "string",
   }];
   isShowImage: boolean = true;
+  animals: string[] = ['zebra', 'moose'];
 
   toggleImage(): void {
     this.isShowImage = !this.isShowImage;
+  }
+
+  changeMethod(): void {
+    this.animals = ['dog', 'cat'];
+    console.log('changeMethod fired!');
+  }
+
+  ngOnInit() {
+    console.log('Init', this.isShowImage);
+  }
+
+  ngOnChanges() {
+    console.log('new change detected');
   }
 }
