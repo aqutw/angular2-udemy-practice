@@ -20,8 +20,8 @@ export class FavoComponent {
   onClick(): void { // when favo onClick
     // this.notify.emit('Message from favo');
     console.log('favo.ts onClick');
-    this.favoClicked.emit(`${this.favoWhat} was favoed.`);
     this.isFavo = !this.isFavo;
+    this.favoClicked.emit(this.isFavo ? `${this.favoWhat} was favoed.` : `${this.favoWhat} was un-favoed`);
   }
 
   getIsFavo(isFavo: boolean): boolean { // a functional getter
