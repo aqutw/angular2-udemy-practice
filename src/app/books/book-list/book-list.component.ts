@@ -13,9 +13,10 @@ export class BookListComponent implements OnInit, OnChanges {
   animals: string[] = ['zebra', 'moose'];
   showMessage: string = 'test...(before notify)';
   favoMessage: string = '';
+  errorMessage: string = '';
 
   constructor(private bookService: BookService) {
-    this.books = bookService.getBooks();
+    // this.books = bookService.getBooks(); // Move to ngOnInit to get Http response
   }
 
   toggleImage(): void {
@@ -27,8 +28,18 @@ export class BookListComponent implements OnInit, OnChanges {
     console.log('changeMethod fired!');
   }
 
+  getAllBooks() {
+    this.bookService.getBooks()
+      .subscribe(_books => {
+        this.books = _books
+      }, _error => {
+        this.errorMessage = <any>_error;
+      });
+  }
+
   ngOnInit() {
     console.log('Init', this.isShowImage);
+    this.getAllBooks();
   }
 
   ngOnChanges() {

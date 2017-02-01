@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule //<----
   ],
   providers: [BookService],
   bootstrap: [AppComponent]

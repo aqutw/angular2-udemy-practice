@@ -1,32 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import { IBook } from './book';
 
 @Injectable()
 export class BookService {
-  getBooks(): IBook[] {
-    return [{
-      bookAuthor: "string",
-      bookTitle: "Book 1",
-      bookPrice: 33,
-      bookDesc: "string",
-      publishedOn: new Date('02/11/1921'),
-      isStock: "string",
-      bookReviews: 5,
-      hardcover: false,
-      bookImageUrl: "string",
-      isBookFavoed: true
-    },{
-      bookAuthor: "string",
-      bookTitle: "Book 2",
-      bookPrice: 33,
-      bookDesc: "string",
-      publishedOn: new Date('02/11/1921'),
-      isStock: "string",
-      bookReviews: 11,
-      hardcover: false,
-      bookImageUrl: "string",
-      isBookFavoed: false
-    }];
+  constructor(private http: Http) {
+
+  }
+  getBooks(): Observable<IBook[]> {
+    return this.http.get('api/books/books.json')
+      .map((res: Response) => {
+        return <IBook[]> res.josn();
+      });
   }
 }
