@@ -13,7 +13,7 @@ export class BookListComponent implements OnInit, OnChanges {
   animals: string[] = ['zebra', 'moose'];
   showMessage: string = 'test...(before notify)';
   favoMessage: string = '';
-  errorMessage: string = '';
+  errorMessage: string;
 
   constructor(private bookService: BookService) {
     // this.books = bookService.getBooks(); // Move to ngOnInit to get Http response
@@ -28,10 +28,10 @@ export class BookListComponent implements OnInit, OnChanges {
     console.log('changeMethod fired!');
   }
 
-  getAllBooks() {
+  initBooks() {
     this.bookService.getBooks()
       .subscribe(_books => {
-        this.books = _books
+        this.books = _books;
       }, _error => {
         this.errorMessage = <any>_error;
       });
@@ -39,7 +39,7 @@ export class BookListComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     console.log('Init', this.isShowImage);
-    this.getAllBooks();
+    this.initBooks();
   }
 
   ngOnChanges() {
