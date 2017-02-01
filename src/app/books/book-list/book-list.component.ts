@@ -31,6 +31,7 @@ export class BookListComponent implements OnInit, OnChanges {
   isShowImage: boolean = true;
   animals: string[] = ['zebra', 'moose'];
   showMessage: string = 'test...(before notify)';
+  favoMessage: string = '';
 
   toggleImage(): void {
     this.isShowImage = !this.isShowImage;
@@ -51,5 +52,10 @@ export class BookListComponent implements OnInit, OnChanges {
 
   onNotifyClicked(msg: string): void {
     this.showMessage = msg;
+  }
+
+  onFavoClicked(msg: string): void {
+    console.log('book-list onFavoClicked');
+    this.favoMessage = msg;
   }
 }

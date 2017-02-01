@@ -1,2 +1,3 @@
-<h1>hello world {{reviews}}</h1>
 <button class="btn btn-info" (click)="onClick()">Trigger notify</button>
+<div class="favo" [class.isFavoed]="getIsFavo()" [title]="favoWhat" (click)="onClick()">favo here</div>
+<button class="btn btn-info" (click)="onClick()">Favo button</button> {{reviews}}
