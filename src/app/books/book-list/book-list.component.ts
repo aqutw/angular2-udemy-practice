@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { IBook } from '../book';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'bs-book-list',
@@ -7,33 +8,15 @@ import { IBook } from '../book';
 })
 
 export class BookListComponent implements OnInit, OnChanges {
-  books: IBook[] = [{
-    bookAuthor: "string",
-    bookTitle: "Book 1",
-    bookPrice: 33,
-    bookDesc: "string",
-    publishedOn: new Date('02/11/1921'),
-    isStock: "string",
-    bookReviews: 5,
-    hardcover: false,
-    bookImageUrl: "string",
-    isBookFavoed: true
-  },{
-    bookAuthor: "string",
-    bookTitle: "Book 2",
-    bookPrice: 33,
-    bookDesc: "string",
-    publishedOn: new Date('02/11/1921'),
-    isStock: "string",
-    bookReviews: 11,
-    hardcover: false,
-    bookImageUrl: "string",
-    isBookFavoed: false
-  }];
+  books: IBook[];
   isShowImage: boolean = true;
   animals: string[] = ['zebra', 'moose'];
   showMessage: string = 'test...(before notify)';
   favoMessage: string = '';
+
+  constructor(private bookService: BookService) {
+    this.books = bookService.getBooks();
+  }
 
   toggleImage(): void {
     this.isShowImage = !this.isShowImage;

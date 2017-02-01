@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { BookService } from './books/book.service';
+
 import { FavoComponent } from './favo/favo.component';
 import { TruncatePipe } from './shared/pipes/truncate.pipe';
 import { HighlightDirective } from './shared/highlight.directive';
@@ -19,7 +21,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
