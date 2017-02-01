@@ -20,6 +20,7 @@ export class BookListComponent implements OnInit, OnChanges {
   }];
   isShowImage: boolean = true;
   animals: string[] = ['zebra', 'moose'];
+  showMessage: string = 'test...(before notify)';
 
   toggleImage(): void {
     this.isShowImage = !this.isShowImage;
@@ -36,5 +37,9 @@ export class BookListComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     console.log('new change detected');
+  }
+
+  onNotifyClicked(msg: string): void {
+    this.showMessage = msg;
   }
 }

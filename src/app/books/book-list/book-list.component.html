@@ -2,7 +2,8 @@
         <section id="products">
         <div class="row">
           <div class="col-md-4" *ngFor="let book of books">
-            <bs-favo [reviews]="book.bookReviews"></bs-favo>
+            <bs-favo [reviews]="book.bookReviews" (notify)="onNotifyClicked($event)"></bs-favo>
+            {{showMessage}}
             <div class="thumbnail">
               <img *ngIf="book.isShowImage" src="app/assets/images/656.jpg">
               <div class="caption" myHighlight>
