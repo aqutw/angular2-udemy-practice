@@ -9,7 +9,7 @@ import { IBook } from '../book';
 export class BookListComponent implements OnInit, OnChanges {
   books: IBook[] = [{
     bookAuthor: "string",
-    bookTitle: "string",
+    bookTitle: "string11111",
     bookPrice: 33,
     bookDesc: "string",
     publishedOn: new Date('02/11/1921'),

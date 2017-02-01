@@ -1,20 +1,21 @@
 <div class="container">
         <section id="products">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4" *ngFor="let book of books">
+            <bs-favo [reviews]="book.bookReviews"></bs-favo>
             <div class="thumbnail">
-              <img *ngIf="isShowImage" src="app/assets/images/656.jpg">
+              <img *ngIf="book.isShowImage" src="app/assets/images/656.jpg">
               <div class="caption" myHighlight>
-                <button class="btn btn-primary" (click)="toggleImage()">
-                  {{ isShowImage ? 'Hide Image' : 'Show Image' }}
+                <button class="btn btn-primary" (click)="book.toggleImage()">
+                  {{ book.isShowImage ? 'Hide Image' : 'Show Image' }}
                 </button>
-                <button class="btn btn-primary" (click)="changeMethod()">
+                <button class="btn btn-primary" (click)="book.changeMethod()">
                   Click Me
                 </button>
                 <h4 class="pull-right">
                   $19.95
                 </h4>
-                <h4><a href="product.html">War and Peace</a></h4>
+                <h4><a href="product.html">{{book.bookTitle}}</a></h4>
                 <p><b>Author: </b>Leo Tolstoy</p>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
