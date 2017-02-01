@@ -24,6 +24,7 @@
                     <span class="glyphicon glyphicon-star"></span>
                   <p class="pull-right">{{book.bookReviews}} Reviews</p>
                 <bs-favo [favoWhat]="book.bookTitle"
+                [isFavo]="book.isBookFavoed"
                 [reviews]="book.bookReviews"
                 (notify)="onNotifyClicked($event)"
                 (favoClicked)="onFavoClicked($event)"></bs-favo>

@@ -17,6 +17,7 @@ export class BookListComponent implements OnInit, OnChanges {
     bookReviews: 5,
     hardcover: false,
     bookImageUrl: "string",
+    isBookFavoed: true
   },{
     bookAuthor: "string",
     bookTitle: "Book 2",
@@ -27,6 +28,7 @@ export class BookListComponent implements OnInit, OnChanges {
     bookReviews: 11,
     hardcover: false,
     bookImageUrl: "string",
+    isBookFavoed: false
   }];
   isShowImage: boolean = true;
   animals: string[] = ['zebra', 'moose'];

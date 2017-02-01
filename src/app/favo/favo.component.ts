@@ -11,9 +11,7 @@ export class FavoComponent {
   // @Input
   @Input() favoWhat: string;
   @Input() reviews: number;
-
-  // private members
-  isFavo: boolean = false;
+  @Input() isFavo: boolean;
 
   // @Output
   @Output() notify: EventEmitter<string> = new EventEmitter<string>();

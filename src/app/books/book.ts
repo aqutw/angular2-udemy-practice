@@ -8,4 +8,5 @@ export interface IBook {
   bookReviews: number;
   hardcover?: boolean;
   bookImageUrl: string;
+  isBookFavoed: boolean;
 }
