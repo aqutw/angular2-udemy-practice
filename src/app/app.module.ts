@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { BookService } from './books/book.service';
 
@@ -17,6 +18,11 @@ import { AppComponent } from './app.component';
     FavoComponent
   ],
   imports: [
+    RouterModule.forRoot([
+      {path: 'books', component: BookListComponent},
+      {path: '', redirectTo: 'books', pathMatch: 'full'},
+      {path: '**', redirectTo: 'books', pathMatch: 'full'},
+      ]),
     BrowserModule,
     FormsModule,
     HttpModule //<----

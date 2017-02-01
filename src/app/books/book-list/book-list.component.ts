@@ -3,7 +3,6 @@ import { IBook } from '../book';
 import { BookService } from '../book.service';
 
 @Component({
-  selector: 'bs-book-list',
   templateUrl: 'book-list.component.html'
 })
 
