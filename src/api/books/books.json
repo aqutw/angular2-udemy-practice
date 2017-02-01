@@ -1,0 +1,23 @@
+[{
+  bookAuthor: "string 1",
+  bookTitle: "Book 1 by JSON",
+  bookPrice: 33,
+  bookDesc: "string",
+  publishedOn: new Date('02/11/1921'),
+  isStock: "string",
+  bookReviews: 5,
+  hardcover: false,
+  bookImageUrl: "string",
+  isBookFavoed: true
+},{
+  bookAuthor: "string",
+  bookTitle: "Book 2 by JSON",
+  bookPrice: 33,
+  bookDesc: "string",
+  publishedOn: new Date('02/11/1921'),
+  isStock: "string",
+  bookReviews: 11,
+  hardcover: false,
+  bookImageUrl: "string",
+  isBookFavoed: false
+}]

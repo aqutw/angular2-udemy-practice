@@ -29,8 +29,11 @@ export class BookListComponent implements OnInit, OnChanges {
   }
 
   initBooks() {
+    console.log('initBooks called', this.bookService, this.bookService.getBooks);
+
     this.bookService.getBooks()
       .subscribe(_books => {
+        console.log('initBooks', _books);
         this.books = _books;
       }, _error => {
         this.errorMessage = <any>_error;
